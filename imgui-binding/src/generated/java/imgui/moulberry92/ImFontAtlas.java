@@ -51,7 +51,7 @@ public final class ImFontAtlas extends ImGuiStructDestroyable {
      */
 
     static native void nInit(); /*
-        jclass jImFontAtlasClass = env->FindClass("imgui/ImFontAtlas");
+        jclass jImFontAtlasClass = env->FindClass("imgui/moulberry92/ImFontAtlas");
         jImFontAtlasCreateAlpha8PixelsMID = env->GetMethodID(jImFontAtlasClass, "createAlpha8Pixels", "(I)Ljava/nio/ByteBuffer;");
         jImFontAtlasCreateRgba32PixelsMID = env->GetMethodID(jImFontAtlasClass, "createRgba32Pixels", "(I)Ljava/nio/ByteBuffer;");
     */

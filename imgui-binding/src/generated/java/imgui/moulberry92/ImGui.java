@@ -6961,15 +6961,15 @@ public class ImGui {
     */
 
     private static native void nInitInputTextData(); /*
-        jclass jInputDataClass = env->FindClass("imgui/type/ImString$InputData");
+        jclass jInputDataClass = env->FindClass("imgui/moulberry92/type/ImString$InputData");
         inputDataSizeID = env->GetFieldID(jInputDataClass, "size", "I");
         inputDataIsDirtyID = env->GetFieldID(jInputDataClass, "isDirty", "Z");
         inputDataIsResizedID = env->GetFieldID(jInputDataClass, "isResized", "Z");
 
-        jclass jImString = env->FindClass("imgui/type/ImString");
+        jclass jImString = env->FindClass("imgui/moulberry92/type/ImString");
         jImStringResizeInternalMID = env->GetMethodID(jImString, "resizeInternal", "(I)[B");
 
-        jclass jCallback = env->FindClass("imgui/callback/ImGuiInputTextCallback");
+        jclass jCallback = env->FindClass("imgui/moulberry92/callback/ImGuiInputTextCallback");
         jInputTextCallbackMID = env->GetMethodID(jCallback, "accept", "(J)V");
     */
 
