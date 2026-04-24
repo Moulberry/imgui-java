@@ -29,7 +29,7 @@ public final class ImGuiViewport extends ImGuiStruct {
     public int ID;
 
     /**
-     * See {@link imgui.flag.ImGuiViewportFlags}.
+     * See {@link imgui.moulberry92.flag.ImGuiViewportFlags}.
      */
     @BindingField(isFlag = true)
     public int Flags;

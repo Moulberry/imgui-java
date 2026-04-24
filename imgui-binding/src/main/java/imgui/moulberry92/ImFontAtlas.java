@@ -373,7 +373,7 @@ public final class ImFontAtlas extends ImGuiStructDestroyable {
     //-------------------------------------------
 
     /**
-     * Build flags (see {@link imgui.flag.ImFontAtlasFlags})
+     * Build flags (see {@link imgui.moulberry92.flag.ImFontAtlasFlags})
      */
     @BindingField(isFlag = true)
     public int Flags;

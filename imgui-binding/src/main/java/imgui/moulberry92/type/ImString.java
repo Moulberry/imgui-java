@@ -222,14 +222,14 @@ public final class ImString implements Cloneable, Comparable<ImString> {
         private static final short DEFAULT_RESIZE_FACTOR = 10;
 
         /**
-         * If not empty, then other chars which are different from provided will be filtered during the {@link imgui.ImGui#inputText}
-         * and {@link imgui.ImGui#inputTextMultiline} methods.
+         * If not empty, then other chars which are different from provided will be filtered during the {@link imgui.moulberry92.ImGui#inputText}
+         * and {@link imgui.moulberry92.ImGui#inputTextMultiline} methods.
          */
         public String allowedChars = "";
 
         /**
-         * If true, then string will be resized during the {@link imgui.ImGui#inputText} and {@link imgui.ImGui#inputTextMultiline} methods.
-         * Alternatively you can provide {@link imgui.flag.ImGuiInputTextFlags#CallbackResize} flag to the input text widgets to enable string resizing.
+         * If true, then string will be resized during the {@link imgui.moulberry92.ImGui#inputText} and {@link imgui.moulberry92.ImGui#inputTextMultiline} methods.
+         * Alternatively you can provide {@link imgui.moulberry92.flag.ImGuiInputTextFlags#CallbackResize} flag to the input text widgets to enable string resizing.
          * Resize factor of the string could be modified by changing {@link #resizeFactor} field.
          */
         public boolean isResizable;

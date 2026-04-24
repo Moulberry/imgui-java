@@ -2,7 +2,7 @@ package imgui.moulberry92.flag;
 
 
 /**
- * Flags for {@link imgui.ImGui#tableSetupColumn(String, int)}
+ * Flags for {@link imgui.moulberry92.ImGui#tableSetupColumn(String, int)}
  */
 public final class ImGuiTableColumnFlags {
     private ImGuiTableColumnFlags() {

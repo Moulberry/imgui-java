@@ -24,7 +24,7 @@ ext.configurePublishing = { packageName, packageDesc, packageVersion ->
         }
         publications {
             imgui(MavenPublication) {
-                groupId = 'io.github.spair'
+                groupId = 'io.github.moulberry'
                 artifactId = packageName
                 version = packageVersion
 
@@ -35,7 +35,7 @@ ext.configurePublishing = { packageName, packageDesc, packageVersion ->
                 pom {
                     name = packageName
                     description = packageDesc
-                    url = 'https://github.com/SpaiR/imgui-java'
+                    url = 'https://github.com/Moulberry/imgui-java'
                     licenses {
                         license {
                             name = 'MIT License'
@@ -50,9 +50,9 @@ ext.configurePublishing = { packageName, packageDesc, packageVersion ->
                         }
                     }
                     scm {
-                        connection = 'scm:git:https://github.com/SpaiR/imgui-java.git'
-                        developerConnection = 'scm:git:https://github.com/SpaiR/imgui-java.git'
-                        url = 'https://github.com/SpaiR/imgui-java.git'
+                        connection = 'scm:git:https://github.com/Moulberry/imgui-java.git'
+                        developerConnection = 'scm:git:https://github.com/Moulberry/imgui-java.git'
+                        url = 'https://github.com/Moulberry/imgui-java.git'
                     }
                 }
             }

@@ -4,7 +4,7 @@ import imgui.moulberry92.binding.annotation.BindingAstEnum;
 import imgui.moulberry92.binding.annotation.BindingSource;
 
 /**
- * Flags for {@link imgui.ImGui#tableNextRow(int)}
+ * Flags for {@link imgui.moulberry92.ImGui#tableNextRow(int)}
  */
 @BindingSource
 public final class ImGuiTableRowFlags {
