@@ -12,11 +12,11 @@ static jfieldID imVec4WID;
 namespace Jni
 {
     void InitCommon(JNIEnv* env) {
-        jclass jImVec2Class = env->FindClass("imgui/ImVec2");
+        jclass jImVec2Class = env->FindClass("imgui/moulberry92/ImVec2");
         imVec2XID = env->GetFieldID(jImVec2Class, "x", "F");
         imVec2YID = env->GetFieldID(jImVec2Class, "y", "F");
 
-        jclass jImVec4Class = env->FindClass("imgui/ImVec4");
+        jclass jImVec4Class = env->FindClass("imgui/moulberry92/ImVec4");
         imVec4XID = env->GetFieldID(jImVec4Class, "x", "F");
         imVec4YID = env->GetFieldID(jImVec4Class, "y", "F");
         imVec4ZID = env->GetFieldID(jImVec4Class, "z", "F");
@@ -60,7 +60,7 @@ namespace Jni
     }
 
     jobjectArray NewImVec2Array(JNIEnv* env, ImVec2* src, int size) {
-        jclass cls = env->FindClass("imgui/ImVec2");
+        jclass cls = env->FindClass("imgui/moulberry92/ImVec2");
         jmethodID cstr = env->GetMethodID(cls, "<init>", "(FF)V");
         jobjectArray dst = env->NewObjectArray(size, cls, NULL);
         for (int i = 0; i < size; i++) {
@@ -72,7 +72,7 @@ namespace Jni
     }
 
     jobjectArray NewImVec4Array(JNIEnv* env, ImVec4* src, int size) {
-        jclass cls = env->FindClass("imgui/ImVec4");
+        jclass cls = env->FindClass("imgui/moulberry92/ImVec4");
         jmethodID cstr = env->GetMethodID(cls, "<init>", "(FFFF)V");
         jobjectArray dst = env->NewObjectArray(size, cls, NULL);
         for (int i = 0; i < size; i++) {
@@ -100,7 +100,7 @@ namespace Jni
     }
 
     jobjectArray NewImGuiKeyDataArray(JNIEnv* env, const ImGuiKeyData* src, int size) {
-        jclass cls = env->FindClass("imgui/ImGuiKeyData");
+        jclass cls = env->FindClass("imgui/moulberry92/ImGuiKeyData");
         jmethodID cstr = env->GetMethodID(cls, "<init>", "(J)V");
         jobjectArray dst = env->NewObjectArray(size, cls, NULL);
         for (int i = 0; i < size; i++) {

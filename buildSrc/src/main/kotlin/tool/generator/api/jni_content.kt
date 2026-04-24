@@ -589,7 +589,7 @@ private fun createFieldGetContent(field: CtField<*>): List<String> {
         }
     } else {
         getAccessor.addAnnotation<CtElement>(f.createAnnotation<Annotation>(f.createTypeReference<Annotation>().apply {
-            setSimpleName<CtReference>("imgui.binding.annotation.BindingMethod")
+            setSimpleName<CtReference>("imgui.moulberry92.binding.annotation.BindingMethod")
         }).apply {
             addValue<CtAnnotation<Annotation>>(A_VALUE_CALL_NAME, field.getCallName())
         })

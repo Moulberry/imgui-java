@@ -1,0 +1,216 @@
+package imgui.moulberry92;
+
+import imgui.moulberry92.binding.ImGuiStructDestroyable;
+import imgui.moulberry92.binding.annotation.BindingField;
+import imgui.moulberry92.binding.annotation.BindingSource;
+
+@BindingSource
+public final class ImFontConfig extends ImGuiStructDestroyable {
+    public ImFontConfig() {
+        super();
+    }
+
+    ImFontConfig(final long ptr) {
+        super(ptr);
+    }
+
+    @Override
+    protected long create() {
+        return nCreate();
+    }
+
+    /*JNI
+        #include "_common.h"
+        #define THIS ((ImFontConfig*)STRUCT_PTR)
+     */
+
+    private native long nCreate(); /*
+        ImFontConfig* cfg = new ImFontConfig();
+        cfg->FontDataOwnedByAtlas = false;
+        return (uintptr_t)cfg;
+    */
+
+    /**
+     * TTF/OTF data
+     */
+    public native byte[] getFontData(); /*
+        int size = THIS->FontDataSize;
+        jbyteArray jBuf = env->NewByteArray(size);
+        env->SetByteArrayRegion(jBuf, 0, size, (jbyte*)THIS->FontData);
+        return jBuf;
+    */
+
+    /**
+     * TTF/OTF data
+     */
+    public native void setFontData(byte[] fontData); /*
+        THIS->FontData = &fontData[0];
+    */
+
+    /**
+     * TTF/OTF data size
+     */
+    @BindingField
+    public int FontDataSize;
+
+    /**
+     * TTF/OTF data ownership taken by the container ImFontAtlas (will delete memory itself).
+     */
+    @BindingField
+    public boolean FontDataOwnedByAtlas;
+
+    /**
+     * Index of font within TTF/OTF file
+     */
+    @BindingField
+    public int FontNo;
+
+    /**
+     * Size in pixels for rasterizer (more or less maps to the resulting font height).
+     */
+    @BindingField
+    public float SizePixels;
+
+    /**
+     * Rasterize at higher quality for sub-pixel positioning.
+     * Note the difference between 2 and 3 is minimal so you can reduce this to 2 to save memory.
+     * Read https://github.com/nothings/stb/blob/master/tests/oversample/README.md for details.
+     */
+    @BindingField
+    public int OversampleH;
+
+    /**
+     * Rasterize at higher quality for sub-pixel positioning.
+     * This is not really useful as we don't use sub-pixel positions on the Y axis.
+     */
+    @BindingField
+    public int OversampleV;
+
+    /**
+     * Align every glyph to pixel boundary. Useful e.g. if you are merging a non-pixel aligned font with the default font.
+     * If enabled, you can set OversampleH/V to 1.
+     */
+    @BindingField
+    public boolean PixelSnapH;
+
+    /**
+     * Extra spacing (in pixels) between glyphs (added to glyph AdvanceX). Since imgui 1.92 this is a
+     * scalar X-only value; the previous {@code GlyphExtraSpacing} ImVec2 was removed as largely obsolete.
+     */
+    @BindingField
+    public float GlyphExtraAdvanceX;
+
+    /**
+     * Offset all glyphs from this font input.
+     */
+    @BindingField
+    public ImVec2 GlyphOffset;
+
+    private short[] glyphRanges;
+
+    /**
+     * Pointer to a user-provided list of Unicode range (2 value per range, values are inclusive, zero-terminated list).
+     * THE ARRAY DATA NEEDS TO PERSIST AS LONG AS THE FONT IS ALIVE.
+     */
+    public short[] getGlyphRanges() {
+        return glyphRanges;
+    }
+
+    /**
+     * Pointer to a user-provided list of Unicode range (2 value per range, values are inclusive, zero-terminated list).
+     * THE ARRAY DATA NEEDS TO PERSIST AS LONG AS THE FONT IS ALIVE.
+     */
+    public void setGlyphRanges(final short[] glyphRanges) {
+        this.glyphRanges = glyphRanges;
+        nSetGlyphRanges(glyphRanges);
+    }
+
+    private native void nSetGlyphRanges(short[] glyphRanges); /*
+        THIS->GlyphRanges = glyphRanges != NULL ? (ImWchar*)&glyphRanges[0] : NULL;
+    */
+
+    private short[] glyphExcludeRanges;
+
+    /**
+     * Exclude ranges (list of Unicode range pairs, zero-terminated) from this font source when merging
+     * multiple fonts -- useful to avoid one font's glyphs masking another's. New in imgui 1.92.
+     * THE ARRAY DATA NEEDS TO PERSIST AS LONG AS THE FONT IS ALIVE.
+     */
+    public short[] getGlyphExcludeRanges() {
+        return glyphExcludeRanges;
+    }
+
+    /**
+     * Exclude ranges (list of Unicode range pairs, zero-terminated) from this font source when merging
+     * multiple fonts. New in imgui 1.92.
+     * THE ARRAY DATA NEEDS TO PERSIST AS LONG AS THE FONT IS ALIVE.
+     */
+    public void setGlyphExcludeRanges(final short[] glyphExcludeRanges) {
+        this.glyphExcludeRanges = glyphExcludeRanges;
+        nSetGlyphExcludeRanges(glyphExcludeRanges);
+    }
+
+    private native void nSetGlyphExcludeRanges(short[] glyphExcludeRanges); /*
+        THIS->GlyphExcludeRanges = glyphExcludeRanges != NULL ? (ImWchar*)&glyphExcludeRanges[0] : NULL;
+    */
+
+    /**
+     * Minimum AdvanceX for glyphs, set Min to align font icons, set both Min/Max to enforce mono-space font
+     */
+    @BindingField
+    public float GlyphMinAdvanceX;
+
+    /**
+     * Maximum AdvanceX for glyphs
+     */
+    @BindingField
+    public float GlyphMaxAdvanceX;
+
+    /**
+     * Merge into previous ImFont, so you can combine multiple inputs font into one ImFont (e.g. ASCII font + icons + Japanese glyphs).
+     * You may want to use GlyphOffset.y when merge font of different heights.
+     */
+    @BindingField
+    public boolean MergeMode;
+
+    /**
+     * Settings for custom font loader. THIS IS LOADER IMPLEMENTATION DEPENDENT. Leave as zero if unsure.
+     * (Renamed from {@code FontBuilderFlags} in imgui 1.92.)
+     */
+    @BindingField(isFlag = true)
+    public int FontLoaderFlags;
+
+    /**
+     * Brighten ({@code >}1.0f) or darken ({@code <}1.0f) font output. Brightening small fonts may be a good workaround to make them more readable.
+     */
+    @BindingField
+    public float RasterizerMultiply;
+
+    /**
+     * DPI scale for rasterization, not altering other font metrics: make it easy to swap between e.g. a 100% and a 400% fonts for a zooming display. IMPORTANT: If you increase this it is expected that you increase font scale accordingly, otherwise quality may look lowered.
+     */
+    @BindingField
+    public float RasterizerDensity;
+
+    /**
+     * Explicitly specify unicode codepoint of ellipsis character. When fonts are being merged first specified ellipsis will be used.
+     */
+    @BindingField
+    public short EllipsisChar;
+
+    // [Internal]
+
+    /**
+     * Name (strictly to ease debugging)
+     */
+    public native void setName(String name); /*
+        strcpy(THIS->Name, name);
+    */
+
+    @BindingField
+    public ImFont DstFont;
+
+    /*JNI
+        #undef THIS
+     */
+}

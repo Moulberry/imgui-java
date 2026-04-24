@@ -15,17 +15,17 @@ static void initialize(JNIEnv* env) {
         return;
     }
 
-    jclass jImPlotPointClass = env->FindClass("imgui/extension/implot/ImPlotPoint");
+    jclass jImPlotPointClass = env->FindClass("imgui/moulberry92/extension/implot/ImPlotPoint");
     imPlotPointXID = env->GetFieldID(jImPlotPointClass, "x", "D");
     imPlotPointYID = env->GetFieldID(jImPlotPointClass, "y", "D");
 
-    jclass jImPlotRangeClass = env->FindClass("imgui/extension/implot/ImPlotRange");
+    jclass jImPlotRangeClass = env->FindClass("imgui/moulberry92/extension/implot/ImPlotRange");
     imPlotRangeMinID = env->GetFieldID(jImPlotRangeClass, "min", "D");
     imPlotRangeMaxID = env->GetFieldID(jImPlotRangeClass, "max", "D");
 
-    jclass jImPlotRectClass = env->FindClass("imgui/extension/implot/ImPlotRect");
-    imPlotRectX = env->GetFieldID(jImPlotRectClass, "x", "Limgui/extension/implot/ImPlotRange;");
-    imPlotRectY = env->GetFieldID(jImPlotRectClass, "y", "Limgui/extension/implot/ImPlotRange;");
+    jclass jImPlotRectClass = env->FindClass("imgui/moulberry92/extension/implot/ImPlotRect");
+    imPlotRectX = env->GetFieldID(jImPlotRectClass, "x", "Limgui/moulberry92/extension/implot/ImPlotRange;");
+    imPlotRectY = env->GetFieldID(jImPlotRectClass, "y", "Limgui/moulberry92/extension/implot/ImPlotRange;");
 
     initialized = true;
 }

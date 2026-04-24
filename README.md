@@ -90,9 +90,9 @@ That means that if you are seeking for a bit more low-level control - you can ga
 
 A very simple application may look like this:
 ```
-import imgui.ImGui;
-import imgui.app.Application;
-import imgui.app.Configuration;
+import imgui.moulberry92.ImGui;
+import imgui.moulberry92.app.Application;
+import imgui.moulberry92.app.Configuration;
 
 public class Main extends Application {
     @Override

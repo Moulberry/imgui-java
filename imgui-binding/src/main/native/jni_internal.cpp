@@ -6,9 +6,9 @@ static jfieldID imRectMax;
 namespace Jni
 {
     void InitInternal(JNIEnv* env) {
-        jclass jImRectClass = env->FindClass("imgui/internal/ImRect");
-        imRectMin = env->GetFieldID(jImRectClass, "min", "Limgui/ImVec2;");
-        imRectMax = env->GetFieldID(jImRectClass, "max", "Limgui/ImVec2;");
+        jclass jImRectClass = env->FindClass("imgui/moulberry92/internal/ImRect");
+        imRectMin = env->GetFieldID(jImRectClass, "min", "Limgui/moulberry92/ImVec2;");
+        imRectMax = env->GetFieldID(jImRectClass, "max", "Limgui/moulberry92/ImVec2;");
     }
 
     void ImRectCpy(JNIEnv* env, ImRect* src, jobject dst) {

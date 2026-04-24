@@ -56,14 +56,8 @@ allprojects {
 tasks.register('buildAll') { t ->
     t.group = 'build'
     t.description = 'Build all project sources.'
-
-    t.dependsOn ':imgui-app:shadowJar'
-
-    ['app', 'binding', 'lwjgl3'].each { module ->
-        ['build', 'sourcesJar', 'javadocJar'].each { task ->
-            t.dependsOn ":imgui-$module:$task"
-        }
-    }
+    t.dependsOn ":imgui-binding:generateApi"
+    t.dependsOn ":imgui-binding:build"
 }
 
 tasks.register('generateAst', GenerateAst) {

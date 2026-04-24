@@ -17,37 +17,37 @@ jmethodID jImPlatformFuncViewportSuppFloatGetMID;
 namespace Jni
 {
     void InitCallbacks(JNIEnv* env) {
-        jclass jImListClipperCallback = env->FindClass("imgui/callback/ImListClipperCallback");
+        jclass jImListClipperCallback = env->FindClass("imgui/moulberry92/callback/ImListClipperCallback");
         jImListClipperCallbackAcceptMID = env->GetMethodID(jImListClipperCallback, "accept", "(I)V");
 
-        jclass jImStrConsumer = env->FindClass("imgui/callback/ImStrConsumer");
+        jclass jImStrConsumer = env->FindClass("imgui/moulberry92/callback/ImStrConsumer");
         jImStrConsumerAcceptMID = env->GetMethodID(jImStrConsumer, "accept", "(Ljava/lang/String;)V");
 
-        jclass jImStrSupplier = env->FindClass("imgui/callback/ImStrSupplier");
+        jclass jImStrSupplier = env->FindClass("imgui/moulberry92/callback/ImStrSupplier");
         jImStrSupplierGetMID = env->GetMethodID(jImStrSupplier, "get", "()Ljava/lang/String;");
 
-        jclass jImPlatformFuncViewport = env->FindClass("imgui/callback/ImPlatformFuncViewport");
-        jImPlatformFuncViewportAcceptMID = env->GetMethodID(jImPlatformFuncViewport, "accept", "(Limgui/ImGuiViewport;)V");
+        jclass jImPlatformFuncViewport = env->FindClass("imgui/moulberry92/callback/ImPlatformFuncViewport");
+        jImPlatformFuncViewportAcceptMID = env->GetMethodID(jImPlatformFuncViewport, "accept", "(Limgui/moulberry92/ImGuiViewport;)V");
 
-        jclass jImPlatformFuncViewportFloat = env->FindClass("imgui/callback/ImPlatformFuncViewportFloat");
-        jImPlatformFuncViewportFloatAcceptMID = env->GetMethodID(jImPlatformFuncViewportFloat, "accept", "(Limgui/ImGuiViewport;F)V");
+        jclass jImPlatformFuncViewportFloat = env->FindClass("imgui/moulberry92/callback/ImPlatformFuncViewportFloat");
+        jImPlatformFuncViewportFloatAcceptMID = env->GetMethodID(jImPlatformFuncViewportFloat, "accept", "(Limgui/moulberry92/ImGuiViewport;F)V");
 
-        jclass jImPlatformFuncViewportImVec2 = env->FindClass("imgui/callback/ImPlatformFuncViewportImVec2");
-        jImPlatformFuncViewportImVec2AcceptMID = env->GetMethodID(jImPlatformFuncViewportImVec2, "accept", "(Limgui/ImGuiViewport;Limgui/ImVec2;)V");
+        jclass jImPlatformFuncViewportImVec2 = env->FindClass("imgui/moulberry92/callback/ImPlatformFuncViewportImVec2");
+        jImPlatformFuncViewportImVec2AcceptMID = env->GetMethodID(jImPlatformFuncViewportImVec2, "accept", "(Limgui/moulberry92/ImGuiViewport;Limgui/moulberry92/ImVec2;)V");
 
-        jclass jImPlatformFuncViewportString = env->FindClass("imgui/callback/ImPlatformFuncViewportString");
-        jImPlatformFuncViewportStringAcceptMID = env->GetMethodID(jImPlatformFuncViewportString, "accept", "(Limgui/ImGuiViewport;Ljava/lang/String;)V");
+        jclass jImPlatformFuncViewportString = env->FindClass("imgui/moulberry92/callback/ImPlatformFuncViewportString");
+        jImPlatformFuncViewportStringAcceptMID = env->GetMethodID(jImPlatformFuncViewportString, "accept", "(Limgui/moulberry92/ImGuiViewport;Ljava/lang/String;)V");
 
-        jclass jImPlatformFuncViewportSuppImVec2 = env->FindClass("imgui/callback/ImPlatformFuncViewportSuppImVec2");
-        jImPlatformFuncViewportSuppImVec2GetMID = env->GetMethodID(jImPlatformFuncViewportSuppImVec2, "get", "(Limgui/ImGuiViewport;Limgui/ImVec2;)V");
+        jclass jImPlatformFuncViewportSuppImVec2 = env->FindClass("imgui/moulberry92/callback/ImPlatformFuncViewportSuppImVec2");
+        jImPlatformFuncViewportSuppImVec2GetMID = env->GetMethodID(jImPlatformFuncViewportSuppImVec2, "get", "(Limgui/moulberry92/ImGuiViewport;Limgui/moulberry92/ImVec2;)V");
 
-        jclass jImPlatformFuncViewportSuppBoolean = env->FindClass("imgui/callback/ImPlatformFuncViewportSuppBoolean");
-        jImPlatformFuncViewportSuppBooleanGetMID = env->GetMethodID(jImPlatformFuncViewportSuppBoolean, "get", "(Limgui/ImGuiViewport;)Z");
+        jclass jImPlatformFuncViewportSuppBoolean = env->FindClass("imgui/moulberry92/callback/ImPlatformFuncViewportSuppBoolean");
+        jImPlatformFuncViewportSuppBooleanGetMID = env->GetMethodID(jImPlatformFuncViewportSuppBoolean, "get", "(Limgui/moulberry92/ImGuiViewport;)Z");
 
-        jclass jImPlatformFuncViewportSuppFloat = env->FindClass("imgui/callback/ImPlatformFuncViewportSuppFloat");
-        jImPlatformFuncViewportSuppFloatGetMID = env->GetMethodID(jImPlatformFuncViewportSuppFloat, "get", "(Limgui/ImGuiViewport;)F");
+        jclass jImPlatformFuncViewportSuppFloat = env->FindClass("imgui/moulberry92/callback/ImPlatformFuncViewportSuppFloat");
+        jImPlatformFuncViewportSuppFloatGetMID = env->GetMethodID(jImPlatformFuncViewportSuppFloat, "get", "(Limgui/moulberry92/ImGuiViewport;)F");
 
-//        jclass jImGuiFileDialogPaneFun = env->FindClass("imgui/extension/imguifiledialog/callback/ImGuiFileDialogPaneFun");
+//        jclass jImGuiFileDialogPaneFun = env->FindClass("imgui/moulberry92/extension/imguifiledialog/callback/ImGuiFileDialogPaneFun");
 //        jImGuiFileDialogPaneFunMID = env->GetMethodID(jImGuiFileDialogPaneFun, "accept", "(Ljava/lang/String;JZ)V");
     }
 

@@ -6,7 +6,7 @@ jobject jImAssertCallbackInstance = NULL;
 namespace Jni
 {    
     void InitAssertion(JNIEnv* env) {      
-        jclass jImAssertCallback = env->FindClass("imgui/assertion/ImAssertCallback");
+        jclass jImAssertCallback = env->FindClass("imgui/moulberry92/assertion/ImAssertCallback");
         jImAssertCallbackMID = env->GetMethodID(jImAssertCallback, "imAssert", "(Ljava/lang/String;ILjava/lang/String;)V");
     }
     

@@ -46,7 +46,7 @@ Gradle's toolchain pins JDK 17 regardless of the system JDK.
 
 ```bash
 buildSrc/scripts/build.sh <macos|linux|windows>   # builds freetype + generateLibs
-cp /tmp/imgui/dst/libimgui-java64.<so|dylib|dll> bin/
+cp /tmp/imgui/dst/libimgui-moulberry92-java64.<so|dylib|dll> bin/
 ./gradlew :example:run -PlibPath=$PWD/bin
 ```
 
@@ -141,7 +141,7 @@ Conflict markers inside generated files or AST JSONs are a false fight. Take you
 
 ### Don't commit build artifacts
 
-Never commit `bin/libimgui-java64.*` or anything staged from `/tmp/imgui/` — `bin/` is owned by the post-merge CI update job. Prefer explicit `git add <path>` over `-A` to avoid picking these up.
+Never commit `bin/libimgui-moulberry92-java64.*` or anything staged from `/tmp/imgui/` — `bin/` is owned by the post-merge CI update job. Prefer explicit `git add <path>` over `-A` to avoid picking these up.
 
 ## Design conventions
 

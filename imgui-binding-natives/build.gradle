@@ -14,26 +14,26 @@ def packageName = 'imgui-java-natives-linux'
 def packageDesc = 'Native binaries for imgui-java binding for Linux'
 def moduleName = 'imgui.natives.linux'
 def fromDir = '../bin'
-def libName = 'libimgui-java64.so'
+def libName = 'libimgui-moulberry92-java64.so'
 
 switch (findProperty('deployType')) {
     case 'windows':
         packageName = 'imgui-java-natives-windows'
         packageDesc = 'Native binaries for imgui-java binding for Windows'
         moduleName = 'imgui.natives.windows'
-        libName = 'imgui-java64.dll'
+        libName = 'imgui-moulberry92-java64.dll'
         break
     case 'linux':
         packageName = 'imgui-java-natives-linux'
         packageDesc = 'Native binaries for imgui-java binding for Linux'
         moduleName = 'imgui.natives.linux'
-        libName = 'libimgui-java64.so'
+        libName = 'libimgui-moulberry92-java64.so'
         break
     case 'macos':
         packageName = 'imgui-java-natives-macos'
         packageDesc = 'Native binaries for imgui-java binding for macOS'
         moduleName = 'imgui.natives.macos'
-        libName = 'libimgui-java64.dylib'
+        libName = 'libimgui-moulberry92-java64.dylib'
         break
 }
 

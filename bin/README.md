@@ -12,7 +12,7 @@ You can also use the `java.library.path` option in the same manner.
 
 ### Changing the Library Name
 
-By default, the binding expects the file name `imgui-java64`. You can change this by using the `imgui.library.name` VM option. For example:
+By default, the binding expects the file name `imgui-moulberry92-java64`. You can change this by using the `imgui.library.name` VM option. For example:
 ```
 -Dimgui.library.name=custom-lib-name.dll
 ```
@@ -23,9 +23,9 @@ The expected library file names for different operating systems are:
 
 | OS      | Library               |
 |---------|-----------------------|
-| Windows | imgui-java64.dll      |
-| Linux   | libimgui-java64.so    |
-| macOS   | libimgui-java64.dylib |
+| Windows | imgui-moulberry92-java64.dll      |
+| Linux   | libimgui-moulberry92-java64.so    |
+| macOS   | libimgui-moulberry92-java64.dylib |
 
 ### Additional Information
 

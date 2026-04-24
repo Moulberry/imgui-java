@@ -11,13 +11,13 @@ static void initialize(JNIEnv* env) {
         return;
     }
 
-    jclass cursorPositionClass = env->FindClass("imgui/extension/texteditor/TextEditorCursorPosition");
+    jclass cursorPositionClass = env->FindClass("imgui/moulberry92/extension/texteditor/TextEditorCursorPosition");
     cursorPositionLineID = env->GetFieldID(cursorPositionClass, "line", "I");
     cursorPositionColumnID = env->GetFieldID(cursorPositionClass, "column", "I");
 
-    jclass cursorSelectionClass = env->FindClass("imgui/extension/texteditor/TextEditorCursorSelection");
-    cursorSelectionStartID = env->GetFieldID(cursorSelectionClass, "start", "Limgui/extension/texteditor/TextEditorCursorPosition;");
-    cursorSelectionEndID = env->GetFieldID(cursorSelectionClass, "end", "Limgui/extension/texteditor/TextEditorCursorPosition;");
+    jclass cursorSelectionClass = env->FindClass("imgui/moulberry92/extension/texteditor/TextEditorCursorSelection");
+    cursorSelectionStartID = env->GetFieldID(cursorSelectionClass, "start", "Limgui/moulberry92/extension/texteditor/TextEditorCursorPosition;");
+    cursorSelectionEndID = env->GetFieldID(cursorSelectionClass, "end", "Limgui/moulberry92/extension/texteditor/TextEditorCursorPosition;");
 
     initialized = true;
 }

@@ -36,9 +36,7 @@ jobs:
       - name: Copy Build Results to Temp
         run: |
           mkdir -p tmp/
-          cp imgui-app/build/libs/*.jar tmp/
           cp imgui-binding/build/libs/*.jar tmp/
-          cp imgui-lwjgl3/build/libs/*.jar tmp/
 
       - name: Upload Artifacts
         uses: actions/upload-artifact@v7
@@ -173,17 +171,6 @@ jobs:
           mkdir out/archives
           zip -rj out/archives/native-libraries out/artifacts/native-libraries
           zip -rj out/archives/java-libraries out/artifacts/java-libraries
-
-      - name: Publish
-        env:
-          NEXUS_UPD_ID: ${{ secrets.RELEASE_NEXUS_UPD_ID }}
-          NEXUS_UPD_PASS: ${{ secrets.RELEASE_NEXUS_UPD_PASS }}
-          SIGNING_KEY_ID: ${{ secrets.RELEASE_SIGNING_KEY_ID }}
-          SIGNING_KEY: ${{ secrets.RELEASE_SIGNING_KEY }}
-          SIGNING_KEY_PASS: ${{ secrets.RELEASE_SIGNING_KEY_PASS }}
-        run: |
-          chmod +x ./buildSrc/scripts/publish.sh
-          buildSrc/scripts/publish.sh
 
       - name: Release
         uses: softprops/action-gh-release@v2
